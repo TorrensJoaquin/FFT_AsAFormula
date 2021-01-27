@@ -1,2 +1,2 @@
 # FFT_AsAFormula
-From Time Domain to Amplitud vs Frecuency using FFT in Excel
+From Time Domain to Amplitud vs Frequency using FFT in Excel
