@@ -4,6 +4,7 @@
 ## **FFT Engine**
 
 * Part of the code was taken from senuba91 in this [Original Post](https://stackoverflow.com/users/5748328/senuba91)
+* The idea came from the Eng, PHD, colleague, friend, Damian Gargicevich.
   
 ## *ATENTION*  
   
