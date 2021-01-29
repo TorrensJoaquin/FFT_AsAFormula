@@ -50,7 +50,7 @@ For k = 0 To NumberOfResults
         G_1(m) = WorksheetFunction.ImProduct(WorksheetFunction.ImPower(TFactor_N2, k * m), f_1(m))
         G_2(m) = WorksheetFunction.ImProduct(WorksheetFunction.ImPower(TFactor_N2, k * m), f_2(m))
     Next m
-    Result(k + 1, 2) = Val(WorksheetFunction.ImAbs(WorksheetFunction.ImSum(WorksheetFunction.ImSum(G_1), WorksheetFunction.ImProduct(WorksheetFunction.ImSum(G_2), WorksheetFunction.ImPower(TFactor_N1, k)))))
+    Result(k + 1, 2) = Val(WorksheetFunction.ImAbs(WorksheetFunction.ImSum(WorksheetFunction.ImSum(G_1), WorksheetFunction.ImProduct(WorksheetFunction.ImSum(G_2), WorksheetFunction.ImPower(TFactor_N1, k))))) / n
     Result(k + 1, 1) = k / (TimeLapse)
 Next k
 FFTFunction = Result
