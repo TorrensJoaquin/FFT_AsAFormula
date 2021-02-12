@@ -25,7 +25,32 @@ TFactor_N2 = WorksheetFunction.ImExp(WorksheetFunction.Complex(0, -2 * Worksheet
 PerformAFFT = FFTFunction(Data, n, TFactor_N1, TFactor_N2, n / 2 - 1, TimeLapse)
 
 End Function
+Function PerformAFFTDateFormat(TimeInDaysAsRange As Range, DataAsRange As Range) As Variant
+Dim Data() As Variant
+Dim Time() As Variant
+Data = DataAsRange.Value2
+Set DataAsRange = Nothing
+Time = TimeInDaysAsRange.Value2
+Set TimeInDaysAsRange = Nothing
 
+Dim n As Long, x As Long
+Dim TFactor_N1 As Variant, TFactor_N2 As Variant, TimeLapse As Double
+
+n = UBound(Data, 1)
+Do Until 2 ^ x <= n And 2 ^ (x + 1) > n                                                                     'locates largest power of 2 from size of input array
+    x = x + 1
+Loop
+
+n = n - (n - 2 ^ x)
+
+TimeLapse = Abs(Time(n, 1) - Time(1, 1)) * 24 * 3600
+
+TFactor_N1 = WorksheetFunction.ImExp(WorksheetFunction.Complex(0, -2 * WorksheetFunction.Pi / (n / 1)))
+TFactor_N2 = WorksheetFunction.ImExp(WorksheetFunction.Complex(0, -2 * WorksheetFunction.Pi / (n / 2)))
+
+PerformAFFT = FFTFunction(Data, n, TFactor_N1, TFactor_N2, n / 2 - 1, TimeLapse)
+
+End Function
 Private Function FFTFunction(Data As Variant, n As Long, TFactor_N1 As Variant, TFactor_N2 As Variant, NumberOfResults As Long, TimeLapse As Double) As Variant
 
 Dim Result() As Variant
