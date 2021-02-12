@@ -16,9 +16,18 @@
 
 ## **How can i call the function?**  
 
-=PerformAFFT(TimeInSecsAsRange,DataAsRange)
+=PerformAFFT(TimeAsRange, DataAsRange, [Optional] TrueForPeriodFalseForFrequency, [Optional] TrueForDaysOrDateFalseForSecond)
+
+- TimeAsRange: *Column with Time Data, You could use time in seconds or in days (Days should be used in excel Date Format)*  
+**If you wan't to use the time in days (Or date format), TrueForDaysOrDateFalseForSecond should be True!**
+
+- DataAsRange: *Column with your numerical Data.*  
+
+- TrueForPeriodFalseForFrequency: *If it is true, the output unit will be revolutions per second instead of hertz*
+
+- TrueForDaysOrDateFalseForSecond: *Check **TimeAsRange** explanation, also the name is quite self explanatory.*  
 
 ## **Whats the meaning of the result?**  
 
-First Column: **Frequency in Hertz**  
+First Column: **Frequency in Hertz [or revolutions per seconds]**  
 Second Column: **Amplitud in the same unit as Data**
