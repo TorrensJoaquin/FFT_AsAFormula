@@ -48,7 +48,7 @@ TimeLapse = Abs(Time(n, 1) - Time(1, 1)) * 24 * 3600
 TFactor_N1 = WorksheetFunction.ImExp(WorksheetFunction.Complex(0, -2 * WorksheetFunction.Pi / (n / 1)))
 TFactor_N2 = WorksheetFunction.ImExp(WorksheetFunction.Complex(0, -2 * WorksheetFunction.Pi / (n / 2)))
 
-PerformAFFT = FFTFunction(Data, n, TFactor_N1, TFactor_N2, n / 2 - 1, TimeLapse)
+PerformAFFTDateFormat = FFTFunction(Data, n, TFactor_N1, TFactor_N2, n / 2 - 1, TimeLapse)
 
 End Function
 Private Function FFTFunction(Data As Variant, n As Long, TFactor_N1 As Variant, TFactor_N2 As Variant, NumberOfResults As Long, TimeLapse As Double) As Variant
