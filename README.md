@@ -23,11 +23,11 @@
 
 - DataAsRange: *Column with your numerical Data.*  
 
-- TrueForPeriodFalseForFrequency: *If it is true, the output unit will be revolutions per second instead of hertz*
+- TrueForPeriodFalseForFrequency: *If it is true, the output unit will be seconds per revolution instead of hertz*
 
 - TrueForDaysOrDateFalseForSecond: *Check **TimeAsRange** explanation, also the name is quite self explanatory.*  
 
 ## **Whats the meaning of the result?**  
 
-First Column: **Frequency in Hertz [or revolutions per seconds]**  
+First Column: **Frequency in Hertz [or seconds per revolution]**  
 Second Column: **Amplitud in the same unit as Data**
